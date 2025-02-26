@@ -34,7 +34,7 @@
 					"response": []
 				},
 				{
-					"name": "news by query",
+					"name": "news-by-query",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -98,7 +98,7 @@
 					"name": "art_works",
 					"item": [
 						{
-							"name": "get art_works for user",
+							"name": "art-works",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -121,7 +121,7 @@
 							"response": []
 						},
 						{
-							"name": "insert art_works for user",
+							"name": "insert",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -147,7 +147,7 @@
 							"response": []
 						},
 						{
-							"name": "delete art_works for user",
+							"name": "remove",
 							"request": {
 								"method": "DELETE",
 								"header": [],
@@ -167,6 +167,939 @@
 										{
 											"key": "art_work_id",
 											"value": "12333"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "blogify - Django",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "google auth",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/user_system/auth/o/google-oauth2/?redirect_uri=http://localhost:5173/access/signin",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"user_system",
+										"auth",
+										"o",
+										"google-oauth2",
+										""
+									],
+									"query": [
+										{
+											"key": "redirect_uri",
+											"value": "http://localhost:5173/access/signin"
+										}
+									]
+								},
+								"description": "Post para loguearme con google, jejeje"
+							},
+							"response": []
+						},
+						{
+							"name": "google auth | code",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "state",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "4/0AfJohXnJnnAm3TM-3oldhzcF9RN0PvKcin2LXOo4QDKs1XV1FGHhAbGzU94RdGcPzFiYEw",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/user_system/auth/o/google-oauth2/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"user_system",
+										"auth",
+										"o",
+										"google-oauth2",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "activation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"uid\": \"NTQ\",\r\n    \"token\" : \"btx2rp-a51dffa91a45b7db603c4ae3ac6881cb\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/user_system/auth/users/activation/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"user_system",
+										"auth",
+										"users",
+										"activation",
+										""
+									]
+								},
+								"description": "activacion de usuario amigo xd"
+							},
+							"response": []
+						},
+						{
+							"name": "resend-email",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"cuentagit1111@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/user_system/auth/users/resend_activation/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"user_system",
+										"auth",
+										"users",
+										"resend_activation",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"cristianrodriguez1111042593@gmail.com\",\r\n    \"password\" : \"123456789xyz\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/user_system/auth/jwt/create/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"user_system",
+										"auth",
+										"jwt",
+										"create",
+										""
+									]
+								},
+								"description": "Loguear al usuario perteneciente"
+							},
+							"response": []
+						},
+						{
+							"name": "JWT-refresh",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5NDE3MDM1MiwiaWF0IjoxNjkzMzA2MzUyLCJqdGkiOiJlYTQ1MjAyYmFkN2U0Njk5ODEwODBhNTkzNjI2ZmQxMiIsInVzZXJfaWQiOjEzfQ.SKWPfHcMpfTumLd0Hn6aUN9I_gGZEWz250_p1jJE6R4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/user_system/auth/jwt/refresh/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"user_system",
+										"auth",
+										"jwt",
+										"refresh",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "JWT-verify",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkzMzA1Mjg3LCJpYXQiOjE2OTMzMDQ2NzAsImp0aSI6ImZlYWQwYmEzYWEzNDRkZDZhOTIzOTg3ZTlmYTdhYzNhIiwidXNlcl9pZCI6MTN9._MQqDEhdTEqvpp1TLCgvYXL-DQvONr2xfXNPyLHo2sw\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/user_system/auth/jwt/verify/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"user_system",
+										"auth",
+										"jwt",
+										"verify",
+										""
+									]
+								},
+								"description": "XDD"
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MjA0MTUxLCJpYXQiOjE2OTYxOTY5NTEsImp0aSI6ImFjODVhMDU0MDJjNTRjM2U4NDkwMGRhZjk1NGY5ZDY5IiwidXNlcl9pZCI6Mn0.XGe2ISJlW1zO11ZrGoukTATj4Sa6eb03pJeTN3htlH0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"Profesora\",\r\n    \"first_name\" : \"luz marina\",\r\n    \"last_name\" : \"Benitez\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/user_system/auth/users/me/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"user_system",
+										"auth",
+										"users",
+										"me",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reset-password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"cuentagit1jjjj111@gmal.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/user_system/auth/users/reset_password/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"user_system",
+										"auth",
+										"users",
+										"reset_password",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reset-password-confirm",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"uid\" : \"ODQ\",\r\n    \"token\" : \"buriuy-7e631fb929e84ae4eac1a190fcdd45a1\",\r\n    \"new_password\" : \"123456389xyz\",\r\n    \"re_new_password\" : \"123456789xyz\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/user_system/auth/users/reset_password_confirm/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"user_system",
+										"auth",
+										"users",
+										"reset_password_confirm",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "blogs",
+					"item": [
+						{
+							"name": "Update blog by user",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk4Nzg4MTU0LCJpYXQiOjE2OTgxODgxNTQsImp0aSI6IjA0N2Y0NmNhN2JjNjQ5NjI4NThiYzc3MjZlNDE3MGI1IiwidXNlcl9pZCI6Nn0.UpE1VqIOKAKvjXUXJf0qs2ydVRFAPGxkSbxjLj4Qg0s",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"sprif ngb ggg ot\",\r\n    \"description\" : \"new_dessssssssssxxxxxxxxxxxxxxxxxxxxxxxxxxxxxssssssscription\",\r\n    \"public\" : \"true\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/dashboard/update_blogs_by_user/?slug=dasdasdas",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"dashboard",
+										"update_blogs_by_user",
+										""
+									],
+									"query": [
+										{
+											"key": "slug",
+											"value": "dasdasdas"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all usernames",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MjQ3MTA1LCJpYXQiOjE2OTYyMzk5MDUsImp0aSI6ImY1ZjJmNDVlYzE4YzQwZmE5OGMzNWViNDA1Yzg0MmU2IiwidXNlcl9pZCI6Mn0.ETJxduta9HFX6Ka-0HD84aHr_hFEBbK7Ui-W5I1JDkI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/dashboard/get_all_usernames/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"dashboard",
+										"get_all_usernames",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get comment likes user auth",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"sprif ngb ggg ot\",\r\n    \"description\" : \"new_dessssssssssxxxxxxxxxxxxxxxxxxxxxxxxxxxxxssssssscription\",\r\n    \"public\" : \"true\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/dashboard/get_user_blog_reactions/?slug=doctoraslugasdddd",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"dashboard",
+										"get_user_blog_reactions",
+										""
+									],
+									"query": [
+										{
+											"key": "slug",
+											"value": "doctoraslugasdddd"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete blog by user",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk0NzQxNDcxLCJpYXQiOjE2OTQ3Mzc4NzEsImp0aSI6ImE1ZmJmMDhjZTg1NjQ5NWE4NzVlY2FkOGI0OTYzOGI2IiwidXNlcl9pZCI6NzF9.v5YaV-xcuMuTa4EhFgSFiyUWdT1W8L8m9OKmz6pzuIY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/dashboard/delete_blog_by_user/?slug=slughondeslug",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"dashboard",
+										"delete_blog_by_user",
+										""
+									],
+									"query": [
+										{
+											"key": "slug",
+											"value": "slughondeslug"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create blog by user",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk0NzQ2ODA2LCJpYXQiOjE2OTQ3NDMyMDQsImp0aSI6ImMyYWUwNjhhNzI0OTRkYmNhZWI4NWYxYzk4MDljZGVkIiwidXNlcl9pZCI6NzF9.jMF2x91BaJ2-jtD2tt8oYTgn-tmzFrlWzoLwUR0wzFI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"hole\",\r\n    \"description\" : \"new_dessssssssssxxxxxxxxxxxxxxxxxxxxxxxxxxxxxssssssscription\",\r\n    \"public\" : \"true\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/dashboard/create_blog_by_user/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"dashboard",
+										"create_blog_by_user",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Blog by user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk0Mzk1MjI3LCJpYXQiOjE2OTQzOTE2MjUsImp0aSI6IjUwNDZiOTUzYzE5MDRmNGNhNzIxNzM5ZGU3MTQ3MzQ0IiwidXNlcl9pZCI6NzF9.fY10HS692gbZChVf_-GI0HsQSoEBwAooRZOwXHlS46M",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/dashboard/blog_by_user/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"dashboard",
+										"blog_by_user",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Blog detail by user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk0NDg1MTk5LCJpYXQiOjE2OTQ0ODE1OTgsImp0aSI6ImNiOTdmNTU1YzU1YzQ0ZGU4Y2IyYTNhYWViNGMyNDEyIiwidXNlcl9pZCI6NzF9.bWGzaJw_G50YwO4RX7olPeL7Pl5_PqBDYXNcrQrGT8w",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/dashboard/blog_detail_by_user/?slug=slugasdasdasdasdasdasdasdslug",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"dashboard",
+										"blog_detail_by_user",
+										""
+									],
+									"query": [
+										{
+											"key": "slug",
+											"value": "slugasdasdasdasdasdasdasdslug"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "social interaction",
+					"item": [
+						{
+							"name": "Likes",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1MjczMTg0LCJpYXQiOjE2OTUyNjU5ODQsImp0aSI6IjZhZjdiMGMxODcyZTQ3ODJiYWJmM2QwMDE0MWVlOTQ1IiwidXNlcl9pZCI6Mn0._vhGFFcvHHvzDHKkXEOxvQ8chQimNjYYtA9D1SQ8Nak",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"slug\" : \"aaa\",\r\n    \"like\" : \"true\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/blog_reactions/likes/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"blog_reactions",
+										"likes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Comments",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MTE5MTkzLCJpYXQiOjE2OTYxMTE5OTIsImp0aSI6Ijc2YWNlODAzZDk3ZTQ4OTA5NTc5NzdmM2Y4MTYyZGE2IiwidXNlcl9pZCI6Mn0.2KIenjynGTrqzmGCSBvduv2KscUrhN4blH7WW2aPA7E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"slug\" : \"doctoraslugnaruto\",\r\n    \"content\" : \"La muerte cada vez me cae mas bien :)\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/blog_reactions/comments/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"blog_reactions",
+										"comments",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Comments Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"unique_key\" : \"slugbbb\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/blog_reactions/comments/?unique_key=jajajaj",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"blog_reactions",
+										"comments",
+										""
+									],
+									"query": [
+										{
+											"key": "unique_key",
+											"value": "jajajaj"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Comments Update",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1NTc4NDE5LCJpYXQiOjE2OTU1NzEyMTksImp0aSI6IjU2OGM1NjI2NTNkOTQ4MzI5ZjdmZGYwMTM4OTVmNDY3IiwidXNlcl9pZCI6Mn0.0DYtLI2Tg8siCp7qDe_zNCqYoxgdZIWP8h_SiaBPFyg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"unique_key\" : \"doctoranaruto-shippuden-uchgqvhpsqgfmxxampalqodexxmswokqgzd308\",\r\n    \"content\" : \"Quien es usted\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/blog_reactions/comments/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"blog_reactions",
+										"comments",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get comment Detail",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MTE5MTkzLCJpYXQiOjE2OTYxMTE5OTIsImp0aSI6Ijc2YWNlODAzZDk3ZTQ4OTA5NTc5NzdmM2Y4MTYyZGE2IiwidXNlcl9pZCI6Mn0.2KIenjynGTrqzmGCSBvduv2KscUrhN4blH7WW2aPA7E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/blog_reactions/comments/?unique_brand=doctoraquien-es-ustedpkattfcfsaozgjzmbviwyjitakabkzbsmvd50",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"blog_reactions",
+										"comments",
+										""
+									],
+									"query": [
+										{
+											"key": "unique_brand",
+											"value": "doctoraquien-es-ustedpkattfcfsaozgjzmbviwyjitakabkzbsmvd50"
 										}
 									]
 								}
