@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "d2ded17b-1cec-4686-a107-e69430e69caa",
+		"name": "personal-projects",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34956060"
+	},
+	"item": [
+		{
+			"name": "news - Flask",
+			"item": [
+				{
+					"name": "news",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/news",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "news by query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/news/tesla",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"news",
+								"tesla"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "rijksmuseum - Next.js",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"dev@funnelchat.com\",\r\n    \"password\" : \"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{next_base_url}}/login",
+									"host": [
+										"{{next_base_url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "art_works",
+					"item": [
+						{
+							"name": "get art_works for user",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{next_base_url}}/art_works?email=cristianestiven1111@gmail.com",
+									"host": [
+										"{{next_base_url}}"
+									],
+									"path": [
+										"art_works"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "cristianestiven1111@gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insert art_works for user",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"cristianestiven1111@gmail.com\",\r\n    \"id_original\" : \"1gsssssstttttttsgggggggggggggaaaaasgggg\",\r\n    \"link\" : \"http://hello.com\",\r\n    \"title\" : \"Camffffssssssssssssssssssssssssssssssssssssssssssssff\",\r\n    \"principal_or_first_maker\" : \"messi\",\r\n    \"image_url\" : \"http://image.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{next_base_url}}/art_works",
+									"host": [
+										"{{next_base_url}}"
+									],
+									"path": [
+										"art_works"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete art_works for user",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{next_base_url}}/art_works?email=cristianestiven1111@gmail.com&art_work_id=12333",
+									"host": [
+										"{{next_base_url}}"
+									],
+									"path": [
+										"art_works"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "cristianestiven1111@gmail.com"
+										},
+										{
+											"key": "art_work_id",
+											"value": "12333"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
