@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "d2ded17b-1cec-4686-a107-e69430e69caa",
+		"_postman_id": "46617bc0-7a9b-4795-855f-726af77bf4fa",
 		"name": "personal-projects",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "34956060"
+		"_exporter_id": "28584826"
 	},
 	"item": [
 		{
@@ -15,18 +15,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/api/v1/news",
-							"protocol": "http",
+							"raw": "{{news-flask-base-url}}/news",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{news-flask-base-url}}"
 							],
-							"port": "5000",
 							"path": [
-								"api",
-								"v1",
 								"news"
 							]
 						}
@@ -39,18 +32,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/api/v1/news/tesla",
-							"protocol": "http",
+							"raw": "{{news-flask-base-url}}/news/tesla",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{news-flask-base-url}}"
 							],
-							"port": "5000",
 							"path": [
-								"api",
-								"v1",
 								"news",
 								"tesla"
 							]
@@ -81,9 +67,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{next_base_url}}/login",
+									"raw": "{{rijksmuseum-next.js-base-url}}/login",
 									"host": [
-										"{{next_base_url}}"
+										"{{rijksmuseum-next.js-base-url}}"
 									],
 									"path": [
 										"login"
@@ -95,7 +81,7 @@
 					]
 				},
 				{
-					"name": "art_works",
+					"name": "art-works",
 					"item": [
 						{
 							"name": "art-works",
@@ -103,9 +89,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{next_base_url}}/art_works?email=cristianestiven1111@gmail.com",
+									"raw": "{{rijksmuseum-next.js-base-url}}/art_works?email=cristianestiven1111@gmail.com",
 									"host": [
-										"{{next_base_url}}"
+										"{{rijksmuseum-next.js-base-url}}"
 									],
 									"path": [
 										"art_works"
@@ -135,9 +121,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{next_base_url}}/art_works",
+									"raw": "{{rijksmuseum-next.js-base-url}}/art_works",
 									"host": [
-										"{{next_base_url}}"
+										"{{rijksmuseum-next.js-base-url}}"
 									],
 									"path": [
 										"art_works"
@@ -152,9 +138,9 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{next_base_url}}/art_works?email=cristianestiven1111@gmail.com&art_work_id=12333",
+									"raw": "{{rijksmuseum-next.js-base-url}}/art_works?email=cristianestiven1111@gmail.com&art_work_id=12333",
 									"host": [
-										"{{next_base_url}}"
+										"{{rijksmuseum-next.js-base-url}}"
 									],
 									"path": [
 										"art_works"
@@ -181,139 +167,138 @@
 			"name": "blogify - Django",
 			"item": [
 				{
-					"name": "auth",
+					"name": "users",
 					"item": [
 						{
-							"name": "google auth",
-							"event": [
+							"name": "google-auth",
+							"item": [
 								{
-									"listen": "prerequest",
-									"script": {
-										"exec": [
-											""
-										],
-										"type": "text/javascript"
-									}
-								},
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "",
-										"value": "",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://127.0.0.1:8000/user_system/auth/o/google-oauth2/?redirect_uri=http://localhost:5173/access/signin",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"user_system",
-										"auth",
-										"o",
-										"google-oauth2",
-										""
-									],
-									"query": [
+									"name": "auth",
+									"event": [
 										{
-											"key": "redirect_uri",
-											"value": "http://localhost:5173/access/signin"
-										}
-									]
-								},
-								"description": "Post para loguearme con google, jejeje"
-							},
-							"response": []
-						},
-						{
-							"name": "google auth | code",
-							"event": [
-								{
-									"listen": "prerequest",
-									"script": {
-										"exec": [
-											""
-										],
-										"type": "text/javascript"
-									}
-								},
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "urlencoded",
-									"urlencoded": [
-										{
-											"key": "state",
-											"value": "",
-											"type": "text"
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
 										},
 										{
-											"key": "code",
-											"value": "4/0AfJohXnJnnAm3TM-3oldhzcF9RN0PvKcin2LXOo4QDKs1XV1FGHhAbGzU94RdGcPzFiYEw",
-											"type": "text"
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
 										}
-									]
-								},
-								"url": {
-									"raw": "http://127.0.0.1:8000/user_system/auth/o/google-oauth2/",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
 									],
-									"port": "8000",
-									"path": [
-										"user_system",
-										"auth",
-										"o",
-										"google-oauth2",
-										""
-									]
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{blogify-django-base-url}}/user_system/auth/o/google-oauth2/?redirect_uri=http://localhost:5173/access/signin",
+											"host": [
+												"{{blogify-django-base-url}}"
+											],
+											"path": [
+												"user_system",
+												"auth",
+												"o",
+												"google-oauth2",
+												""
+											],
+											"query": [
+												{
+													"key": "redirect_uri",
+													"value": "http://localhost:5173/access/signin"
+												}
+											]
+										},
+										"description": "Post para loguearme con google, jejeje"
+									},
+									"response": []
+								},
+								{
+									"name": "auth-code",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "state",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "code",
+													"value": "4/0AfJohXnJnnAm3TM-3oldhzcF9RN0PvKcin2LXOo4QDKs1XV1FGHhAbGzU94RdGcPzFiYEw",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{blogify-django-base-url}}/user_system/auth/o/google-oauth2/",
+											"host": [
+												"{{blogify-django-base-url}}"
+											],
+											"path": [
+												"user_system",
+												"auth",
+												"o",
+												"google-oauth2",
+												""
+											]
+										}
+									},
+									"response": []
 								}
-							},
-							"response": []
+							]
 						},
 						{
 							"name": "activation",
@@ -330,15 +315,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/user_system/auth/users/activation/",
-									"protocol": "http",
+									"raw": "{{blogify-django-base-url}}/user_system/auth/users/activation/",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{blogify-django-base-url}}"
 									],
-									"port": "8000",
 									"path": [
 										"user_system",
 										"auth",
@@ -366,15 +346,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/user_system/auth/users/resend_activation/",
-									"protocol": "http",
+									"raw": "{{blogify-django-base-url}}/user_system/auth/users/resend_activation/",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{blogify-django-base-url}}"
 									],
-									"port": "8000",
 									"path": [
 										"user_system",
 										"auth",
@@ -401,15 +376,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/user_system/auth/jwt/create/",
-									"protocol": "http",
+									"raw": "{{blogify-django-base-url}}/user_system/auth/jwt/create/",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{blogify-django-base-url}}"
 									],
-									"port": "8000",
 									"path": [
 										"user_system",
 										"auth",
@@ -437,15 +407,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/user_system/auth/jwt/refresh/",
-									"protocol": "http",
+									"raw": "{{blogify-django-base-url}}/user_system/auth/jwt/refresh/",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{blogify-django-base-url}}"
 									],
-									"port": "8000",
 									"path": [
 										"user_system",
 										"auth",
@@ -472,15 +437,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/user_system/auth/jwt/verify/",
-									"protocol": "http",
+									"raw": "{{blogify-django-base-url}}/user_system/auth/jwt/verify/",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{blogify-django-base-url}}"
 									],
-									"port": "8000",
 									"path": [
 										"user_system",
 										"auth",
@@ -514,15 +474,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/user_system/auth/users/me/",
-									"protocol": "http",
+									"raw": "{{blogify-django-base-url}}/user_system/auth/users/me/",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{blogify-django-base-url}}"
 									],
-									"port": "8000",
 									"path": [
 										"user_system",
 										"auth",
@@ -549,15 +504,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/user_system/auth/users/reset_password/",
-									"protocol": "http",
+									"raw": "{{blogify-django-base-url}}/user_system/auth/users/reset_password/",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{blogify-django-base-url}}"
 									],
-									"port": "8000",
 									"path": [
 										"user_system",
 										"auth",
@@ -584,15 +534,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/user_system/auth/users/reset_password_confirm/",
-									"protocol": "http",
+									"raw": "{{blogify-django-base-url}}/user_system/auth/users/reset_password_confirm/",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{blogify-django-base-url}}"
 									],
-									"port": "8000",
 									"path": [
 										"user_system",
 										"auth",
@@ -603,59 +548,9 @@
 								}
 							},
 							"response": []
-						}
-					]
-				},
-				{
-					"name": "blogs",
-					"item": [
-						{
-							"name": "Update blog by user",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk4Nzg4MTU0LCJpYXQiOjE2OTgxODgxNTQsImp0aSI6IjA0N2Y0NmNhN2JjNjQ5NjI4NThiYzc3MjZlNDE3MGI1IiwidXNlcl9pZCI6Nn0.UpE1VqIOKAKvjXUXJf0qs2ydVRFAPGxkSbxjLj4Qg0s",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"title\" : \"sprif ngb ggg ot\",\r\n    \"description\" : \"new_dessssssssssxxxxxxxxxxxxxxxxxxxxxxxxxxxxxssssssscription\",\r\n    \"public\" : \"true\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://127.0.0.1:8000/dashboard/update_blogs_by_user/?slug=dasdasdas",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"dashboard",
-										"update_blogs_by_user",
-										""
-									],
-									"query": [
-										{
-											"key": "slug",
-											"value": "dasdasdas"
-										}
-									]
-								}
-							},
-							"response": []
 						},
 						{
-							"name": "Get all usernames",
+							"name": "users",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -678,15 +573,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/dashboard/get_all_usernames/",
-									"protocol": "http",
+									"raw": "{{blogify-django-base-url}}/dashboard/get_all_usernames/",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{blogify-django-base-url}}"
 									],
-									"port": "8000",
 									"path": [
 										"dashboard",
 										"get_all_usernames",
@@ -697,13 +587,317 @@
 							"response": []
 						},
 						{
-							"name": "Get comment likes user auth",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
+							"name": "user-detail",
 							"request": {
 								"method": "GET",
 								"header": [],
+								"url": {
+									"raw": "{{blogify-django-base-url}}/user",
+									"host": [
+										"{{blogify-django-base-url}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "blogs",
+					"item": [
+						{
+							"name": "categories",
+							"item": [
+								{
+									"name": "create",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{blogify-django-base-url}}/categories/create",
+											"host": [
+												"{{blogify-django-base-url}}"
+											],
+											"path": [
+												"categories",
+												"create"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{blogify-django-base-url}}/categories/update",
+											"host": [
+												"{{blogify-django-base-url}}"
+											],
+											"path": [
+												"categories",
+												"update"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "categories",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{blogify-django-base-url}}/categories",
+											"host": [
+												"{{blogify-django-base-url}}"
+											],
+											"path": [
+												"categories"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{blogify-django-base-url}}/category/5",
+											"host": [
+												"{{blogify-django-base-url}}"
+											],
+											"path": [
+												"category",
+												"5"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "detail",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{blogify-django-base-url}}/category/2",
+											"host": [
+												"{{blogify-django-base-url}}"
+											],
+											"path": [
+												"category",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "social-interactions",
+							"item": [
+								{
+									"name": "likes",
+									"item": [
+										{
+											"name": "add-or-remove-like",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"url": {
+													"raw": "{{blogify-django-base-url}}/likes/add-or-remove/",
+													"host": [
+														"{{blogify-django-base-url}}"
+													],
+													"path": [
+														"likes",
+														"add-or-remove",
+														""
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "likes",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{blogify-django-base-url}}/likes",
+													"host": [
+														"{{blogify-django-base-url}}"
+													],
+													"path": [
+														"likes"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "comments",
+									"item": [
+										{
+											"name": "create",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"url": {
+													"raw": "{{blogify-django-base-url}}/comments/create/",
+													"host": [
+														"{{blogify-django-base-url}}"
+													],
+													"path": [
+														"comments",
+														"create",
+														""
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "update",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1NTc4NDE5LCJpYXQiOjE2OTU1NzEyMTksImp0aSI6IjU2OGM1NjI2NTNkOTQ4MzI5ZjdmZGYwMTM4OTVmNDY3IiwidXNlcl9pZCI6Mn0.0DYtLI2Tg8siCp7qDe_zNCqYoxgdZIWP8h_SiaBPFyg",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"unique_key\" : \"doctoranaruto-shippuden-uchgqvhpsqgfmxxampalqodexxmswokqgzd308\",\r\n    \"content\" : \"Quien es usted\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{blogify-django-base-url}}/comments/update",
+													"host": [
+														"{{blogify-django-base-url}}"
+													],
+													"path": [
+														"comments",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "comment",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MTE5MTkzLCJpYXQiOjE2OTYxMTE5OTIsImp0aSI6Ijc2YWNlODAzZDk3ZTQ4OTA5NTc5NzdmM2Y4MTYyZGE2IiwidXNlcl9pZCI6Mn0.2KIenjynGTrqzmGCSBvduv2KscUrhN4blH7WW2aPA7E",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{blogify-django-base-url}}/comment/5",
+													"host": [
+														"{{blogify-django-base-url}}"
+													],
+													"path": [
+														"comment",
+														"5"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "delete",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"unique_key\" : \"slugbbb\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{blogify-django-base-url}}/comment/3",
+													"host": [
+														"{{blogify-django-base-url}}"
+													],
+													"path": [
+														"comment",
+														"3"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "comments",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{blogify-django-base-url}}/blog/2/comments",
+													"host": [
+														"{{blogify-django-base-url}}"
+													],
+													"path": [
+														"blog",
+														"2",
+														"comments"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk4Nzg4MTU0LCJpYXQiOjE2OTgxODgxNTQsImp0aSI6IjA0N2Y0NmNhN2JjNjQ5NjI4NThiYzc3MjZlNDE3MGI1IiwidXNlcl9pZCI6Nn0.UpE1VqIOKAKvjXUXJf0qs2ydVRFAPGxkSbxjLj4Qg0s",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\r\n    \"title\" : \"sprif ngb ggg ot\",\r\n    \"description\" : \"new_dessssssssssxxxxxxxxxxxxxxxxxxxxxxxxxxxxxssssssscription\",\r\n    \"public\" : \"true\"\r\n}",
@@ -714,24 +908,19 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/dashboard/get_user_blog_reactions/?slug=doctoraslugasdddd",
-									"protocol": "http",
+									"raw": "{{blogify-django-base-url}}/dashboard/update_blogs_by_user/?slug=dasdasdas",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{blogify-django-base-url}}"
 									],
-									"port": "8000",
 									"path": [
 										"dashboard",
-										"get_user_blog_reactions",
+										"update_blogs_by_user",
 										""
 									],
 									"query": [
 										{
 											"key": "slug",
-											"value": "doctoraslugasdddd"
+											"value": "dasdasdas"
 										}
 									]
 								}
@@ -739,7 +928,7 @@
 							"response": []
 						},
 						{
-							"name": "Delete blog by user",
+							"name": "delete",
 							"request": {
 								"method": "DELETE",
 								"header": [
@@ -759,15 +948,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/dashboard/delete_blog_by_user/?slug=slughondeslug",
-									"protocol": "http",
+									"raw": "{{blogify-django-base-url}}/dashboard/delete_blog_by_user/?slug=slughondeslug",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{blogify-django-base-url}}"
 									],
-									"port": "8000",
 									"path": [
 										"dashboard",
 										"delete_blog_by_user",
@@ -784,7 +968,7 @@
 							"response": []
 						},
 						{
-							"name": "Create blog by user",
+							"name": "create",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -804,15 +988,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/dashboard/create_blog_by_user/",
-									"protocol": "http",
+									"raw": "{{blogify-django-base-url}}/dashboard/create_blog_by_user/",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{blogify-django-base-url}}"
 									],
-									"port": "8000",
 									"path": [
 										"dashboard",
 										"create_blog_by_user",
@@ -823,10 +1002,7 @@
 							"response": []
 						},
 						{
-							"name": "Blog by user",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
+							"name": "blogs",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -836,25 +1012,11 @@
 										"type": "text"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/dashboard/blog_by_user/",
-									"protocol": "http",
+									"raw": "{{blogify-django-base-url}}/dashboard/blog_by_user/",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{blogify-django-base-url}}"
 									],
-									"port": "8000",
 									"path": [
 										"dashboard",
 										"blog_by_user",
@@ -865,7 +1027,7 @@
 							"response": []
 						},
 						{
-							"name": "Blog detail by user",
+							"name": "detail",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -888,15 +1050,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/dashboard/blog_detail_by_user/?slug=slugasdasdasdasdasdasdasdslug",
-									"protocol": "http",
+									"raw": "{{blogify-django-base-url}}/dashboard/blog_detail_by_user/?slug=slugasdasdasdasdasdasdasdslug",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{blogify-django-base-url}}"
 									],
-									"port": "8000",
 									"path": [
 										"dashboard",
 										"blog_detail_by_user",
@@ -906,200 +1063,6 @@
 										{
 											"key": "slug",
 											"value": "slugasdasdasdasdasdasdasdslug"
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "social interaction",
-					"item": [
-						{
-							"name": "Likes",
-							"request": {
-								"method": "PATCH",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1MjczMTg0LCJpYXQiOjE2OTUyNjU5ODQsImp0aSI6IjZhZjdiMGMxODcyZTQ3ODJiYWJmM2QwMDE0MWVlOTQ1IiwidXNlcl9pZCI6Mn0._vhGFFcvHHvzDHKkXEOxvQ8chQimNjYYtA9D1SQ8Nak",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"slug\" : \"aaa\",\r\n    \"like\" : \"true\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8000/blog_reactions/likes/",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8000",
-									"path": [
-										"blog_reactions",
-										"likes",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Comments",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MTE5MTkzLCJpYXQiOjE2OTYxMTE5OTIsImp0aSI6Ijc2YWNlODAzZDk3ZTQ4OTA5NTc5NzdmM2Y4MTYyZGE2IiwidXNlcl9pZCI6Mn0.2KIenjynGTrqzmGCSBvduv2KscUrhN4blH7WW2aPA7E",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"slug\" : \"doctoraslugnaruto\",\r\n    \"content\" : \"La muerte cada vez me cae mas bien :)\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8000/blog_reactions/comments/",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8000",
-									"path": [
-										"blog_reactions",
-										"comments",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Comments Delete",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"unique_key\" : \"slugbbb\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8000/blog_reactions/comments/?unique_key=jajajaj",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8000",
-									"path": [
-										"blog_reactions",
-										"comments",
-										""
-									],
-									"query": [
-										{
-											"key": "unique_key",
-											"value": "jajajaj"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Comments Update",
-							"request": {
-								"method": "PATCH",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1NTc4NDE5LCJpYXQiOjE2OTU1NzEyMTksImp0aSI6IjU2OGM1NjI2NTNkOTQ4MzI5ZjdmZGYwMTM4OTVmNDY3IiwidXNlcl9pZCI6Mn0.0DYtLI2Tg8siCp7qDe_zNCqYoxgdZIWP8h_SiaBPFyg",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"unique_key\" : \"doctoranaruto-shippuden-uchgqvhpsqgfmxxampalqodexxmswokqgzd308\",\r\n    \"content\" : \"Quien es usted\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8000/blog_reactions/comments/",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8000",
-									"path": [
-										"blog_reactions",
-										"comments",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Get comment Detail",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MTE5MTkzLCJpYXQiOjE2OTYxMTE5OTIsImp0aSI6Ijc2YWNlODAzZDk3ZTQ4OTA5NTc5NzdmM2Y4MTYyZGE2IiwidXNlcl9pZCI6Mn0.2KIenjynGTrqzmGCSBvduv2KscUrhN4blH7WW2aPA7E",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8000/blog_reactions/comments/?unique_brand=doctoraquien-es-ustedpkattfcfsaozgjzmbviwyjitakabkzbsmvd50",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8000",
-									"path": [
-										"blog_reactions",
-										"comments",
-										""
-									],
-									"query": [
-										{
-											"key": "unique_brand",
-											"value": "doctoraquien-es-ustedpkattfcfsaozgjzmbviwyjitakabkzbsmvd50"
 										}
 									]
 								}
