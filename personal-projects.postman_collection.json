@@ -1072,6 +1072,176 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "drink-culture - Django",
+			"item": [
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "user",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{drink-culture-django-token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{drink-culture-django-base-url}}/users/1/",
+									"host": [
+										"{{drink-culture-django-base-url}}"
+									],
+									"path": [
+										"users",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{drink-culture-django-token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{drink-culture-django-base-url}}/users/",
+									"host": [
+										"{{drink-culture-django-base-url}}"
+									],
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{drink-culture-django-token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"cuentagit1111@gmail.com\",\r\n    \"email\" : \"cuentagit1111@gmail.com\",\r\n    \"password\" : \"1111042593\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{drink-culture-django-base-url}}/user/5/",
+									"host": [
+										"{{drink-culture-django-base-url}}"
+									],
+									"path": [
+										"user",
+										"5",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"cuentagit1111@gmail.com\",\r\n    \"email\" : \"cuentagit1111@gmail.com\",\r\n    \"password\" : \"1111042593\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{drink-culture-django-base-url}}/auth/token/",
+									"host": [
+										"{{drink-culture-django-base-url}}"
+									],
+									"path": [
+										"auth",
+										"token",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{drink-culture-django-base-url}}/users/create/",
+									"host": [
+										"{{drink-culture-django-base-url}}"
+									],
+									"path": [
+										"users",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
 		}
 	]
 }
